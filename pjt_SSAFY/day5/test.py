@@ -1,12 +1,10 @@
-def even_elements(input_list):
-    index = 0
-    while index < len(input_list):
-        if input_list[index] % 2 != 0:
-            input_list.pop(index)
-        else:
-            index += 1
-    input_list.extend([])
+scores = [85, 90, 100]
+result = 0
+num_items = 0
 
-sample_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-even_elements(sample_list)
-print(sample_list)
+for score in scores:
+    result += score
+    num_items += 1
+
+result /= num_items
+print(result)
