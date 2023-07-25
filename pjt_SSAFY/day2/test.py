@@ -1,4 +1,5 @@
-print(5 or 3)
-print(3 or 0)
-print(0 or 3)
-print(0 or 0)
+person = {'name': 'Alice', 'age': 25}
+
+print(person.items())  # dict_items([('name', 'Alice'), ('age', 25)])
+for k, v in person.items():
+    print(k, v)

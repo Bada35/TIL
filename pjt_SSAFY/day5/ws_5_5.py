@@ -1,6 +1,6 @@
 # ws_5_5.py
 
-# extend와 pop 이용하여 구현
+# 편한대로 구현
 # def even_elements(my_list):
 #     even_list = []
 #     even = []
@@ -9,14 +9,18 @@
 #             even_list.append(i)
 #     return even_list
 
-def even_elements(my_list):
-    even_list = []
-    even = []
-    for i in my_list:
-        if i % 2 == 0:
-            even = list(my_list.pop(my_list.index(i)))
-            even_list.extend(even)
-    return even_list
+# extend와 pop 이용하여 구현
+
+def even_elements(input_list):
+    index = 0
+    while index < len(input_list):
+        if input_list[index] % 2 != 0:
+            input_list.pop(index)
+        else:
+            index += 1
+    input_list.extend([])
+    return input_list
+
 
 
 my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
