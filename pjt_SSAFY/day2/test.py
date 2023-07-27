@@ -1,5 +1,3 @@
-person = {'name': 'Alice', 'age': 25}
-
-print(person.items())  # dict_items([('name', 'Alice'), ('age', 25)])
-for k, v in person.items():
-    print(k, v)
+print(314e-2)
+print(314e2)
+print(type(314e-2))
