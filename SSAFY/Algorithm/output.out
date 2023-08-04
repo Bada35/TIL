@@ -1,10 +1,1 @@
-[[1, 2, 3], [0, 0, 0], [0, 0, 0]]
-c:0 r:2 i:4 N:2
-k:0
-sn[1][2]
-sn[1][2] = 4
-sn[3][2]
-Traceback (most recent call last):
-  File "C:/Users/SSAFY/Desktop/TIL/SSAFY/Algorithm/day4/test.py", line 113, in <module>
-    sn[c][r] = i
-IndexError: list index out of range
+C

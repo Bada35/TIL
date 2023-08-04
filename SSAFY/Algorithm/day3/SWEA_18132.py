@@ -1,19 +1,15 @@
 T = int(input())
-
-
-def subset_sum_count(N, K):
-    dp = [[0] * (K + 1) for _ in range(N + 1)]
-    dp[0][0] = 1  # 합이 0인 경우는 빈 집합 1개로 초기화
-
-    for i in range(1, N + 1):
-        for j in range(K + 1):
-            dp[i][j] = dp[i - 1][j]
-            if j >= i:
-                dp[i][j] += dp[i - 1][j - i]
-
-    return dp[N][K]
+A = [i for i in range(1, 13)]
 
 for tc in range(1, T + 1):
     N, K = map(int, input().split())
-    A = list(range(1, N + 1))
-    print(f'#{tc} {subset_sum_count(N, K)}')
+    cnt = 0
+    for i in range(1 << 12):  # 1<<n = 2ⁿ 즉 부분 집합의 개수만큼
+        subset = []
+        for j in range(12):  # 원소의 수 만큼 비트를 비교함
+            if i & (1 << j):  # for i in range(n):\n if bit[i]: 과 같은역할
+                subset.append(A[j])
+        if len(subset) == N and sum(subset) == K:
+            cnt += 1
+
+    print(f'#{tc} {cnt}')
