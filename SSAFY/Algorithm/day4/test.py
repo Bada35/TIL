@@ -85,38 +85,46 @@
 #         return -1
 
 
+# #    ↓   ←   ↑  →
+# di = [1, 0, -1, 0]
+# dj = [0, -1, 0, 1]
+#
+#
+# N = 3
+# sn = [[0] * N for _ in range(N)]
+#
+# for i in range(N):
+#     sn[0][i] = i + 1
+#
+# print(sn)
+#
+# c, r, i = 0, N - 1, N + 1
+# N -= 1
+# print(f'c:{c} r:{r} i:{i} N:{N}')
+#
+# while 1:
+#     for k in range(4):
+#         print(f'k:{k}')
+#         for p in range(1, N+1):
+#             c += di[k] * p
+#             r += dj[k] * p
+#             print(f'sn[{c}][{r}]')
+#             sn[c][r] = i
+#             print(f'sn[{c}][{r}] = {sn[c][r]}')
+#             i += 1
+#         if k == 1 or k == 3:
+#             N -= 1
+#         if N == 0:
+#             break
+#     break
+#
+# print(sn)
 
-#    ↓   ←   ↑  →
-di = [1, 0, -1, 0]
-dj = [0, -1, 0, 1]
+# st = '694855'
+# print(list(st))
+# print(*list(st), sep='')
+#
+# for i in range(3,0,-1):
+#     print(i)
 
-
-N = 3
-sn = [[0] * N for _ in range(N)]
-
-for i in range(N):
-    sn[0][i] = i + 1
-
-print(sn)
-
-c, r, i = 0, N - 1, N + 1
-N -= 1
-print(f'c:{c} r:{r} i:{i} N:{N}')
-
-while 1:
-    for k in range(4):
-        print(f'k:{k}')
-        for p in range(1, N+1):
-            c += di[k] * p
-            r += dj[k] * p
-            print(f'sn[{c}][{r}]')
-            sn[c][r] = i
-            print(f'sn[{c}][{r}] = {sn[c][r]}')
-            i += 1
-        if k == 1 or k == 3:
-            N -= 1
-        if N == 0:
-            break
-    break
-
-print(sn)
+print((-1)%2)
