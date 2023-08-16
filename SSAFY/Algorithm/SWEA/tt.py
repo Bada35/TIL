@@ -1,5 +1,2 @@
-S = input()
-li = []
-for i in range(ord('a'), ord('z')+1):
-    li.append(S.find(chr(i)))
-print(*li)
+a = ['9', '+', '(', '5', '*', '2', '+', '1', ')']
+print(a.count('9'))
