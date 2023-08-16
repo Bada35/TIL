@@ -1,4 +1,4 @@
-def cal(a, b, c):
+def cal(a, b, c):  # + - * / 계산
     return b + c if a == '+' else (b - c if a == '-' else (b * c if a == '*' else b // c))
 
 
