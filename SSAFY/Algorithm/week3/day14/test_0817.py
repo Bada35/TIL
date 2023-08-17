@@ -29,5 +29,6 @@
 # q.popleft()
 # print(q)
 
-
+input()
+print(eval(input()))
 
