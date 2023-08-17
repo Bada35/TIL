@@ -12,7 +12,10 @@ T = int(input())
 
 for tc in range(1, T + 1):
     N, M = map(int, input().split())
-    piz = [[i + 1, c] for i, c in enumerate(list(map(int, input().split())))]
+    a = list(map(int, input().split()))
+    print(a)
+    piz = [[i + 1, c] for i, c in enumerate(a)]
+    print(piz)
     Q = piz[:N].copy()
 
     print(f'#{tc} {cook(Q, piz[N:])}')
