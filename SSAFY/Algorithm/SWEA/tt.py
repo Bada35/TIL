@@ -1,2 +1,4 @@
-a = ['9', '+', '(', '5', '*', '2', '+', '1', ')']
-print(a.count('9'))
+from sys import stdin, stdout
+N, M, R = map(int, input().split())
+
+stdin.read().splitlines()

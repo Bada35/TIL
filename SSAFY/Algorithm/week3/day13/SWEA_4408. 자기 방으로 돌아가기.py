@@ -11,5 +11,5 @@ for tc in range(1, T + 1):
         e = (e + 1) // 2
         for j in range(s - 1, e):
             visited[j] += 1
-    print(visited)
+
     print(f'#{tc} {max(visited)}')
