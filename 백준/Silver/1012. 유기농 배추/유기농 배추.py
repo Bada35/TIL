@@ -1,4 +1,5 @@
 # 인접 리스트 생성
+# x,y 와 행,렬이 너무 헷갈렸다. x가 열, y가 행..
 
 import sys
 input = sys.stdin.readline
