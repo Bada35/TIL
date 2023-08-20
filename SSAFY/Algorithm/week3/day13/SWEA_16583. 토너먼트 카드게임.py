@@ -6,7 +6,6 @@ def rsp(n1, n2):
     else:
         return n2
 
-
 def tourna(lst):
     l = len(lst)
     if l == 1:
@@ -15,7 +14,6 @@ def tourna(lst):
     win1 = tourna(lst[:mid])
     win2 = tourna(lst[mid:])
     return rsp(win1, win2)
-
 
 T = int(input())
 
