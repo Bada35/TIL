@@ -1,9 +1,3 @@
-def inorder(node):
-    pass
-
-
-def iscal():
-    pass
 
 
 for tc in range(1, 11):
