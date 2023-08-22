@@ -1,24 +1,18 @@
-import sys
-input = sys.stdin.readline
+N = int(input())
+board = [[0 for _ in range(101)] for _ in range(101)]
+areas = [0 for _ in range(N+1)]
 
-N = int(input())  # 색종이의 개수
-paper_area = [[0 for _ in range(1001)] for _ in range(1001)]
-res = [0] * (N + 1)  # 각 색종이가 보이는 넓이 저장
+for order in range(1, N+1):
+    x, y, w, h = map(int, input().split())
+    covered = 0
+    for i in range(x, x+w):
+        for j in range(y, y+h):
+            if board[i][j] != 0:  # 이미 덮인 영역이라면
+                areas[board[i][j]] -= 1  # 해당 영역의 색종이의 보이는 부분 넓이 감소
+                covered += 1  # 겹친 영역 카운트 증가
+            board[i][j] = order  # 보드 업데이트
 
-for n in range(1, N + 1):
-    x, y, width, height = map(int, input().split())
+    areas[order] = w*h - covered  # 현재 색종이의 보이는 부분 계산
 
-    # 해당 영역에 색종이 번호로 값을 업데이트
-    for i in range(x, x + width):
-        for j in range(y, y + height):
-            paper_area[i][j] = n
-
-# 각 색종이의 번호가 몇 번 등장하는지 카운트하여 넓이 계산
-for i in range(1001):
-    for j in range(1001):
-        if paper_area[i][j] != 0:
-            res[paper_area[i][j]] += 1
-
-# 출력
-for i in range(1, N + 1):
-    print(res[i])
+for i in range(1, N+1):
+    print(areas[i])
