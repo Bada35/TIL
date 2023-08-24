@@ -12,17 +12,9 @@ def pre_order(node):
         return tree[node]
 
 
-def cal(op, a, b):  # op: 연산자, a: 앞 값, b: 뒷 값
-    if op == '+':
-        return a + b
-    elif op == '-':
-        return a - b
-    elif op == '*':
-        return a * b
-    elif op == '/':
-        if b == 0:  # 분모가 0인 경우 예외 처리
-            return 0  # 이 부분은 문제의 요구 사항에 따라 다르게 처리될 수 있습니다.
-        return a // b
+def cal(op, a, b):  # op:연산자 a:앞값 b:뒤값
+    return a + b if op == '+' else a - b if op == '-' else a * b if op == '*' else a // b if op == '/' and b != 0 else 0
+
 
 
 for tc in range(1, 11):
