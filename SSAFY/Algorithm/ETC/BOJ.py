@@ -1,31 +1,29 @@
-def on_off(s):  # 스위치 번호(인덱스)로 받기
-    if switch[s]:
-        switch[s] = 0
+import sys
+input = sys.stdin.readline
+
+w, h = map(int, input().split())
+n = int(input())
+length = (w + h) * 2
+loca = []
+res = 0
+
+# 북:1 남:2 서:3 동:4
+for _ in range(n + 1):
+    di, i = map(int, input().split())
+    if di == 2:
+        tmp = i
+    elif di == 4:
+        tmp = w + (h - i)
+    elif di == 1:
+        tmp = w + h + (w - i)
     else:
-        switch[s] = 1
+        tmp = length - (h - i)
+    loca.append(tmp)
 
+dong = loca.pop()
 
-def switching(s, n):
-    if s == 1:  # 남자면
-        for i in range(n-1, T, n):
-            on_off(i)
-    else:  # 여자면
-        max_len = min(n-1, T - n)
-        print(max_len)
-        while max_len:
-            if switch[n - 1 - max_len:n - 1] == switch[n - 1 + max_len:n - 1:-1]:
-                for i in range(n - 1 - max_len, n - 1 + max_len + 1):
-                    on_off(i)
-                break
-            max_len -= 1
+for loc in loca:
+    tmp = abs(dong - loc)
+    res += min(tmp, length - tmp)
 
-
-T = int(input())  # 스위치 개수
-switch = list(map(int, input().split()))
-n = int(input())  # 학생 수
-for _ in range(n):
-    s, sw_n = map(int, input().split())  # 남학생 s=1, 여학생 s=2
-    switching(s, sw_n)
-
-print(*switch)
-
+print(res)
