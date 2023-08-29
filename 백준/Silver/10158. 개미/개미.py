@@ -1,22 +1,9 @@
-import sys
-input = sys.stdin.readline
+t = [list(map(int, input().split())) for _ in range(3)]
 
-w, h = map(int, input().split())
-p, q = map(int, input().split())
-t = int(input())
+print(*t, sep='\n')
 
-total_dx = p + t
-total_dy = q + t
+y = list(map(list, zip(*t[::-1])))
+# for i in range(len(y)):
+#     y[i] = list(y[i])
 
-bw_x = total_dx // w
-bw_y = total_dy // h
-
-res_x = total_dx % w
-res_y = total_dy % h
-
-if bw_x % 2 == 1:
-    res_x = w - res_x
-if bw_y % 2 == 1:
-    res_y = h - res_y
-
-print(res_x, res_y)
+print(*y, sep='\n')
