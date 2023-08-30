@@ -1,29 +1,22 @@
-import sys
-input = sys.stdin.readline
-
 w, h = map(int, input().split())
 n = int(input())
-length = (w + h) * 2
-loca = []
-res = 0
+dist = []
+ans = 0
+for _ in range(n+1):
+    # 북:1 남:2 서:3 동:4
+    a, b = map(int, input().split())
+    if a == 1:
+        dist.append(2*w + h - b)
+    elif a == 2:
+        dist.append(b)
+    elif a == 3:
+        dist.append(2*w + h + b)
+    elif a == 4:
+        dist.append(w + h - b)
 
-# 북:1 남:2 서:3 동:4
-for _ in range(n + 1):
-    di, i = map(int, input().split())
-    if di == 2:
-        tmp = i
-    elif di == 4:
-        tmp = w + (h - i)
-    elif di == 1:
-        tmp = w + h + (w - i)
-    else:
-        tmp = length - (h - i)
-    loca.append(tmp)
+cur = dist[-1]
 
-dong = loca.pop()
+for i in range(n):
+    ans += min(dist[i] - cur, 2 * (w + h) - (dist[i] - cur))
 
-for loc in loca:
-    tmp = abs(dong - loc)
-    res += min(tmp, length - tmp)
-
-print(res)
+print(ans)
