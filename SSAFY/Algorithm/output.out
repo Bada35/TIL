@@ -1,3 +1,6 @@
-#1 89
-#2 96
-#3 139
+Traceback (most recent call last):
+  File "C:\Users\didue\Desktop\TIL\SSAFY\Algorithm\week3\day11\SWEA_16523. 미로찾기_BackTracking.py", line 26, in <module>
+    miro = [list(input()) for _ in range(N)]
+  File "C:\Users\didue\Desktop\TIL\SSAFY\Algorithm\week3\day11\SWEA_16523. 미로찾기_BackTracking.py", line 26, in <listcomp>
+    miro = [list(input()) for _ in range(N)]
+EOFError: EOF when reading a line
