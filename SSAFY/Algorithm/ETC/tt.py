@@ -1,7 +1,5 @@
-values = []
+from itertools import combinations
 
-while True:
-    value = input()
-    if not value:
-        break
-    values.append(int(value))
+s = {'o', 'e', 'h', 'l', 'r'}
+for i in combinations(s, 3):
+    print(i)
