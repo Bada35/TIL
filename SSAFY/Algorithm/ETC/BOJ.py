@@ -33,6 +33,30 @@ def brute_force(k, words, u):  # U안에서 K길이만큼의 부분집합을 다
     print(max_cnt)
 
 
+def bitmask(K, words, u):
+    char_to_bit = {char: 1 << idx for idx, char in enumerate(U)}
+    bit_words = []
+    for word in words:
+        bit_word = 0
+        for char in word:
+            bit_word |= char_to_bit[char]
+        bit_words.append(bit_word)
+
+    max_cnt = 0
+    for i in range(1 << len(char_to_bit)):
+        if bin(i).count('1') != K:  # K개의 글자 아니면 고려x
+            # print(i, bin(i))
+            continue
+
+        cnt = 0
+        for bit_word in bit_words:
+            if bit_word & i == bit_word:  # 선택된 문자의 부분집합을 이용해서 표현 가능하면 cnt += 1
+                cnt += 1
+        max_cnt = max(max_cnt, cnt)
+
+    print(max_cnt)
+
+
 def init():
     N, K = map(int, input().split())  # N:단어수(자연수 <= 50)  K:글자수(0 or 자연수 <= 26)
 
@@ -63,5 +87,6 @@ words: [{'r'}, {'l', 'o', 'e', 'h'}, {'r'}]
 U: {'l', 'r', 'e', 'h', 'o'}
 '''
 K, words, U = init()
+bitmask(K, words, U)
 brute_force(K, words, U)
-# greedy(K, words, U)
+greedy(K, words, U)
