@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\SSAFY\Desktop\TIL\0.SSAFY\Algorithm\ETC\BOJ.py", line 1, in <module>
+    a, b, c = map(int, input().split())
+ValueError: not enough values to unpack (expected 3, got 1)
