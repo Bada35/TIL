@@ -1,5 +1,5 @@
 def merge_sort(m):
-    global cnt  # 전역 변수 사용 선언
+    global cnt
     if len(m) == 1:
         return m
 
@@ -10,7 +10,7 @@ def merge_sort(m):
     sorted_left = merge_sort(left)
     sorted_right = merge_sort(right)
 
-    if sorted_left[-1] > sorted_right[-1]:  # 왼쪽 마지막 원소가 오른쪽 마지막 원소보다 큰 경우
+    if sorted_left[-1] > sorted_right[-1]:  # 왼쪽 마지막 원소 > 오른쪽 마지막 원소보
         cnt += 1
 
     return merge2(sorted_left, sorted_right)
@@ -42,6 +42,6 @@ for tc in range(1, int(input()) + 1):
     N = int(input())
     nums = list(map(int, input().split()))
 
-    cnt = 0  # 조건을 충족하는 횟수를 저장하는 변수 초기화
+    cnt = 0
     sorted_nums = merge_sort(nums)
-    print(f'#{tc} {sorted_nums[N//2]} {cnt}')  # 수정: nums -> sorted_nums
+    print(f'#{tc} {sorted_nums[N//2]} {cnt}')
