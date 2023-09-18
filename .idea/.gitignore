@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+SSAFY/Algorithm/ETC/BOJ.py
+SSAFY/Algorithm/ETC/ttt.py
+SSAFY/Algorithm/input.in
+SSAFY/Algorithm/output.out
+=======
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
@@ -174,3 +188,4 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+>>>>>>> abb5ad14196d41426183c5d9cf4536d730015f97
