@@ -1,47 +1,37 @@
-def merge_sort(m):
-    global cnt  # 전역 변수 사용 선언
-    if len(m) == 1:
-        return m
+import sys
+input = sys.stdin.readline
 
-    middle = len(m) // 2
-    left = m[:middle]
-    right = m[middle:]
-
-    sorted_left = merge_sort(left)
-    sorted_right = merge_sort(right)
-
-    if sorted_left[-1] > sorted_right[-1]:  # 왼쪽 마지막 원소가 오른쪽 마지막 원소보다 큰 경우
-        cnt += 1
-
-    return merge2(sorted_left, sorted_right)
+di = [(0, 1), (1, 0), (0, -1), (-1, 0)]  # 우 하 좌 상
 
 
-def merge2(left, right):
-    result = []
-    i = j = 0
+# 66퍼 컷..
+def move(x, y, cnt=1):
+    global max_cnt
+    visited.remove(board[x][y])
 
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
+    if cnt + len(visited) < max_cnt:
+        return
 
-    while i < len(left):
-        result.append(left[i])
-        i += 1
-    while j < len(right):
-        result.append(right[j])
-        j += 1
+    for dx, dy in di:
+        is_blocked = True
+        nx, ny = x + dx, y + dy
+        if 0 <= nx < R and 0 <= ny < C and board[nx][ny] in visited:  # 가용 범위내에 있고, 안 가본 알파벳이면
+            is_blocked = False  # 더 이상 못 갈 때만 max_cnt 업데이트
+            if cnt + (R - 1 - nx) + (C - 1 - ny) < max_cnt:
+                continue
+            move(nx, ny, cnt + 1)
+        if is_blocked:
+            max_cnt = max(max_cnt, cnt)
 
-    return result
+    visited.add(board[x][y])
 
 
-for tc in range(1, int(input()) + 1):
-    N = int(input())
-    nums = list(map(int, input().split()))
+R, C = map(int, input().split())  # R행 C열
+board = [list(input().strip()) for _ in range(R)]
 
-    cnt = 0  # 조건을 충족하는 횟수를 저장하는 변수 초기화
-    sorted_nums = merge_sort(nums)
-    print(f'#{tc} {sorted_nums[N//2]} {cnt}')  # 수정: nums -> sorted_nums
+visited = set(c for row in board for c in row)
+max_cnt = float('-inf')
+
+move(0, 0)
+
+print(max_cnt)

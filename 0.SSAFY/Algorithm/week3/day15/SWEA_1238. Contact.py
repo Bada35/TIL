@@ -2,7 +2,7 @@ from collections import deque
 
 
 def bfs(start):
-    Q = deque([(start, 0)])  # (node, depth)
+    Q = deque([(start, 0)])
     visited[start] = True
     max_dep = -1
     res = []
