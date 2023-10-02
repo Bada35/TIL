@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 for tc in range(1, int(input()) + 1):
     H, W, N = map(int, input().split())
     fl = N % H
