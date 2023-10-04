@@ -1,14 +1,7 @@
-tmp = 1
-for i in range(1, int(input()) + 1):
-    tmp *= i
+N = int(input())
+count = 0
+while N >= 5:
+    count += N // 5
+    N //= 5
 
-s = str(tmp)
-cnt = 0
-l = len(s)
-
-for i in range(l - 1, -1, -1):
-    if s[i] == '0':
-        cnt += 1
-    else:
-        print(cnt)
-        break
+print(count)
