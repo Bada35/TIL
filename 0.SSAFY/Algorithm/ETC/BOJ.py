@@ -1,16 +1,10 @@
-n = int(input())
-nums = [int(input()) for _ in range(n)]
-nums.sort()
-a = [nums.count(i) for i in nums]
-c = max(a)
-b = []
+from sys import stdin
+input = stdin.readline
+nums = {}
 
-for i in range(n):
-    if a[i] == c:
-        b.append(nums[i])
+for _ in range(int(input())):
+    tmp = int(input())
+    if tmp not in nums.keys():
 
-b = list(set(b))
+    nums[int(input())] += 1
 
-if len(b) != 1:
-    b = [b[1]]
-print(int(round(sum(nums) / n)), nums[n // 2], b[0], max(nums) - min(nums), sep='\n')
