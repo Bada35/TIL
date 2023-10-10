@@ -1,6 +1,6 @@
 for _ in range(int(input())):
     s = input()
-    n = s.count('(')
+    n = min(s.count(')'), s.count('('))
     for _ in range(n):
         s = s.replace('()', '')
     if s:
