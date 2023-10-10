@@ -1,3 +1,6 @@
+from sys import stdin
+input = stdin.readline
+
 judge = []
 for _ in range(int(input())):
     i, j = input().split()
