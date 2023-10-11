@@ -1,3 +1,6 @@
+from sys import stdin
+input = stdin.readline
+
 st = []
 for _ in range(int(input())):
     tmp = int(input())
