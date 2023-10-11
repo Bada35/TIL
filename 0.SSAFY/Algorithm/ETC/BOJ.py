@@ -1,10 +1,11 @@
 from sys import stdin
 input = stdin.readline
-nums = {}
 
-for _ in range(int(input())):
-    tmp = int(input())
-    if tmp not in nums.keys():
+res = -1
+N = int(input())
 
-    nums[int(input())] += 1
-
+for i in range(N // 5, -1, -1):
+    if not (N - 5 * i) % 3:
+        res = i + (N - 5 * i) // 3
+        break
+print(res)
