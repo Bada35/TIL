@@ -1,7 +1,7 @@
 from sys import stdin
 input = stdin.readline
 
-while True:
+while 1:
     s = input()
     if s.rstrip() == '.':  # rstrip()으로 오른쪽 공백(특히 줄바꿈 문자)만 제거
         break
