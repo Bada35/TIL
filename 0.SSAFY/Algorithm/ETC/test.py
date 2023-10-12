@@ -1,4 +1,4 @@
-s = input()
-if s[-1] == '.':
-    print(1)
-print(s[-1])
+from collections import deque
+s = deque([1, 2, 3, 4])
+s.rotate(-1)
+print(s)
