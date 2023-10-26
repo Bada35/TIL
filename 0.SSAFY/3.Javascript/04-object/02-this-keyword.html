@@ -9,20 +9,20 @@
 
 <body>
   <script>
-    // 1.1 단순 호출
-    // const myFunc = function () {
-    //   return this
-    // }
-    // console.log(myFunc()) // window
+    1.1 단순 호출
+    const myFunc = function () {
+      return this
+    }
+    console.log(myFunc()) // window
 
-    // 1.2 메서드 호출
-    // const myObj = {
-    //   data: 1,
-    //   myFunc: function () {
-    //     return this
-    //   }
-    // }
-    // console.log(myObj.myFunc()) // myObj
+    1.2 메서드 호출
+    const myObj = {
+      data: 1,
+      myFunc: function () {
+        return this
+      }
+    }
+    console.log(myObj.myFunc()) // myObj
 
     // 2. Nested
     // 2.1 일반 함수
