@@ -19,6 +19,7 @@
   <input type="text" id="text-input">
 
   <script>
+    // input
     const inputTag = document.querySelector('#text-input')
     const h1Tag = document.querySelector('h1')
 
@@ -28,12 +29,16 @@
 
     inputTag.addEventListener('input', inputHandler)
 
+    // color
+    const btn = document.querySelector('#btn')
+    
     const clickHandler = function(event) {
       h1Tag.classList.toggle('blue')
     }
 
-    const btn = document.querySelector('#btn')
     btn.addEventListener('click', clickHandler)
+
+
 
   </script>
 </body>
