@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{ greeting }}</h1>
+    <button @click="count++">{{ count }}</button>
+    <p>{{ count }}</p>
+    <h3>{{ count }} </h3>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue  // JS 객체 구조분해할당
+
+    const app = createApp({
+      setup () {  // setup: function(){}와 같음. 단축 메서드 쓴 것
+        const count = ref(0)
+        const greeting = ref('Hello')
+        return {  
+          count,   // count: count랑 같음. 단축 속성 쓴 것
+          greeting
+        }
+      }
+    })
+
+    app.mount('#app')  // 하나의 vue app이 하나의 DOM object에 연결됨
+  </script>
+</body>
+
+</html>
