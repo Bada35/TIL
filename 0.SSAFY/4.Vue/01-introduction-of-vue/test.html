@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+
+        const app = createApp({
+            setup() {
+                return {
+
+                }
+            }
+        })
+
+        {{ const number = 1 }}  // 표현식이 아닌 선언식
+        {{ if (ok) { return message } }}  // 흐름제어도 작동x 삼항 표현식을 사용
+    </script>
+</body>
+</html>
