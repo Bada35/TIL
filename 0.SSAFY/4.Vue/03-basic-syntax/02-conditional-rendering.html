@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>조건문 연습하기</h1>
+    <button @click="toggleLogin">Login/Logout</button>
+    <ul v-if="isLogin">
+      <li>유저네임 : {{ user.userName }}</li>
+      <li>관리자여부 : {{ user.isAdmin }}</li>
+      <li>비밀번호 : {{ user.passWord }}</li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const isLogin = ref(false) // 기본값을 false로 설정하여 로그인되지 않은 상태를 나타냄
+        const user = ref({ // user 정보를 반응형 데이터로 만듦
+          userName : `admin`,
+          isAdmin : true,
+          passWord : `1q2w3e4r`
+        })
+
+        function toggleLogin() { // 로그인 상태를 토글하는 함수
+          isLogin.value = !isLogin.value
+        }
+
+        return {
+          isLogin,
+          user,
+          toggleLogin // 템플릿에서 사용할 수 있도록 함수를 반환
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>
