@@ -9,38 +9,44 @@
 
 <body>
   <div id="app">
-    <h1>조건문 연습하기</h1>
-    <button @click="toggleLogin">Login/Logout</button>
-    <ul v-if="isLogin">
-      <li>유저네임 : {{ user.userName }}</li>
-      <li>관리자여부 : {{ user.isAdmin }}</li>
-      <li>비밀번호 : {{ user.passWord }}</li>
-    </ul>
+    <!-- if else -->
+    <p v-if="isSeen">true일때 보여요</p>
+    <p v-else>false일때 보여요</p>
+    <button @click="isSeen = !isSeen">토글</button>
+
+    <!-- else if -->
+    <div v-if="name === 'Alice'">Alice입니다</div>
+    <div v-else-if="name === 'Bella'">Bella입니다</div>
+    <div v-else-if="name === 'Cathy'">Cathy입니다</div>
+    <div v-else>아무도 아닙니다.</div>
+
+    <!-- v-if on <template> -->
+    <template v-if="name === 'Cathy'">
+      <div>Cathy입니다</div>
+      <div>나이는 30살입니다</div>
+    </template>
+
+    <!-- v-show -->
+    <div v-show="isShow">v-show</div>
   </div>
+
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script>
     const { createApp, ref } = Vue
 
     const app = createApp({
       setup() {
-        const isLogin = ref(false) // 기본값을 false로 설정하여 로그인되지 않은 상태를 나타냄
-        const user = ref({ // user 정보를 반응형 데이터로 만듦
-          userName : `admin`,
-          isAdmin : true,
-          passWord : `1q2w3e4r`
-        })
-
-        function toggleLogin() { // 로그인 상태를 토글하는 함수
-          isLogin.value = !isLogin.value
-        }
-
+        const isSeen = ref(true)
+        const name = ref('Cathy')
+        const isShow = ref(false)
         return {
-          isLogin,
-          user,
-          toggleLogin // 템플릿에서 사용할 수 있도록 함수를 반환
+          isSeen,
+          name,
         }
       }
-    }).mount('#app')
+    })
+
+    app.mount('#app')
   </script>
 </body>
 
