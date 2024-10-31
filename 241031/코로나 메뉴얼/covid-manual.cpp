@@ -3,12 +3,12 @@ using namespace std;
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    char sym[3];
-    int degree[3], cnt = 0;
+    char sym;
+    int degree, cnt = 0;
 
     for (int i = 0; i < 3; i++) {
-        cin >> sym[i] >> degree[i];
-        if ((sym[i] == 'Y') && (degree[i] >= 37)) {
+        cin >> sym >> degree;
+        if ((sym == 'Y') && (degree >= 37)) {
             cnt ++;
         }
     }
