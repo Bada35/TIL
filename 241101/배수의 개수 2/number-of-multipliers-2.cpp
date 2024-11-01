@@ -7,7 +7,7 @@ int main() {
 
     for(int i = 0; i < 10; i++){
         cin >> num;
-        if (num % 2) {
+        if (num % 2 == 1) {
         cnt ++;
     }
     }
