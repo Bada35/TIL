@@ -5,17 +5,18 @@ int main() {
     int mid, fin;
     cin >> mid >> fin;
 
+    int scholarship = 0;
+
     if(mid >= 90){
         if (fin >= 95){
-            cout << 100000;
+            scholarship = 100000;
         }
         else if (fin >= 90){
-            cout << 50000;
+            scholarship = 50000;
         }
     }
-    else{
-        cout << 0;
-    }
-    
+
+    cout << scholarship;
+
     return 0;
 }
