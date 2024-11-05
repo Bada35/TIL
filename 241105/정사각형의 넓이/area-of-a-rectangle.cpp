@@ -3,15 +3,13 @@ using namespace std;
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    int n, area;
+    int n;
 
     cin >> n;
 
-    area = n * n;
+    cout << n * n << endl;
 
-    cout << area << endl;
-
-    if(area < 5) {
+    if(n < 5) {
         cout << "tiny";
     }
 
