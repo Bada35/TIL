@@ -2,23 +2,20 @@
 using namespace std;
 
 int main() {
-    int A, B;
-    cin >> A >> B;
+    int math_A, math_B, eng_A, eng_B;
+    char res = 'A';
+    cin >> math_A >> eng_A >> math_B >> eng_B;
 
-    if(A > B){
-        cout << "A";
+    if (math_A < math_B) {
+        res = 'B';
     }
-    else if(A < B){
-        cout << "B";
+    else if (math_A == math_B) {
+        if (eng_A < eng_B) {
+            res = 'B';
+        }
     }
-    else{
-        cin >> A >> B;
-        if(A > B){
-        cout << "A";
-    }
-    else if(A < B){
-        cout << "B";
-    }
-    }
+
+    cout << res;
+    
     return 0;
 }
