@@ -6,7 +6,7 @@ int main() {
 
     cin >> gen >> age;
     
-    if(gen){
+    if(gen == 1){
         if(age >= 19){
             cout << "WOMAN";
         }
