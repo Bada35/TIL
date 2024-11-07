@@ -1,19 +1,12 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main() {
-    int a, b, temp;
+    int a, b; 
     cin >> a >> b;
-
-    if (b < a) {
-        temp = b;
-        b = a;
-        a = temp;
-    }
-
-    for (int i = b; i >= a; --i) {
+    for (int i = max(a, b); i >= min(a, b); i--)
         cout << i << " ";
-    }
-
+    
     return 0;
 }
