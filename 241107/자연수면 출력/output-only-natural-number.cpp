@@ -10,6 +10,7 @@ int main() {
             cout << a;
         }
     }
-    
+    else cout << 0;
+
     return 0;
 }
