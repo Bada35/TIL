@@ -5,19 +5,13 @@ int main() {
     int a, b, temp, sum_val = 0;
     cin >> a >> b;
 
-    if (a > b) {
-        temp = b;
-        b = a;
-        a = temp;
-    }
+    if (a > b) swap(a, b);
 
-    for (int i = a; i <= b; ++i) {
-        if (i % 5 == 0) {
-            sum_val += i;
-        }
-    }
+    if (a % 5 != 0) a = a + (5 - a % 5);
+
+    for (int i = a; i <= b; i += 5) sum_val += i;
 
     cout << sum_val;
-    
+
     return 0;
 }
